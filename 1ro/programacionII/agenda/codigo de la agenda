@@ -1,0 +1,171 @@
+//Este proyecto consta de library.c y funciones.py
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#define N 5
+#define MAX 20
+#define L 10000
+#define NOM 1000
+
+
+enum tipoCont{
+    Favorito,
+    Conocido,
+    Trabajo
+};
+
+typedef struct {
+    char nombre[MAX];
+    char apellido[MAX];
+    char telef[MAX];
+    short int edad;
+    enum tipoCont;
+}persona;
+
+
+int add(persona *ag, int indice, int max);
+
+void mostrar(persona *ag, int max);
+
+void eliminar(persona *ag, int max);
+
+int saveInTxt(persona *ag, int max);
+
+
+int main(){
+    int max = N;
+    int *fichero;
+    persona *agenda = malloc(max * sizeof(persona));
+    int indice = -1, option;
+
+    do {
+        printf("Que quieres hacer?\n"
+               "\t[1] Ver tu lista de contactos.\n"
+               "\t[2] Agregar un contacto.\n"
+               "\t[3] Eliminar contacto.\n"
+               "\t[4] Guardar agenda en fichero de texto.\n"
+               "\t[5] Leer agenda en fichero de texto.\n"
+               "\t[0] Salir.\n");
+
+        scanf("%i",&option);
+        switch (option) {
+            case 0:
+                option = 0;
+                break;
+            case 1:
+                mostrar(agenda, max);
+                break;
+            case 2:
+                if (indice >= max) {
+                    max += 5;
+                    agenda = realloc(agenda, max * sizeof(persona));
+                }
+                indice++;
+                max = add(agenda, indice, max);
+                break;
+            case 3:
+                eliminar(agenda, max);
+                break;
+            case 4:
+                saveInTxt(agenda, max);
+                printf("%i",fichero);
+                break;
+            default:
+                printf("Esa no es una accion permitida.");
+                break;
+        }
+    } while (option != 0);
+
+    return 0;
+}
+
+
+int add(persona *ag,int indice, int max){
+    if (indice >= max){
+        ag = realloc(ag, max + 5);
+        max += 5;
+    }
+    printf("nombre: ");
+    scanf("%s",&ag[indice].nombre);
+    printf("apellido: ");
+    scanf("%s",&ag[indice].apellido);
+    printf("numero: ");
+    scanf("%s",&ag[indice].telef);
+    printf("edad: ");
+    scanf("%i",&ag[indice].edad);
+    return max;
+}
+
+void mostrar(persona *ag, int max){
+    for (int i = 0; i < max; ++i) {
+        printf("%i; %s; %s; %s; %i",i + 1,ag[i].nombre,ag[i].apellido,ag[i].telef,ag[i].edad);
+        printf("\n");
+    }
+}
+
+
+void eliminar(persona *ag, int max){
+    int elec, seg;
+    printf("\n Que contacto deseas borrar?\n");
+    mostrar(ag, max);
+    printf("Di el numero: ");
+    scanf("%i",&elec);
+    printf("Estas seguro?\n"
+           "\t[1] Si.\n"
+           "\t[2] No.\n");
+    scanf("%i",&seg);
+
+    if (seg == 1){
+        for (int i = (elec - 1); i < max; ++i) {
+            ag[i] = ag[i + 1];
+        }
+    }
+    printf("\n");
+    mostrar(ag, max);
+    printf("\n");
+}
+
+int saveInTxt(persona *ag, int max) {
+    char nombreFichero[NOM];
+    char linea[L];
+    int seguro;
+    int option;
+
+    printf("Dame el nombre del fichero donde lo deseas guardar terminado en .txt:");
+    scanf("%s",nombreFichero);
+    FILE *fichero = fopen(nombreFichero, "w");
+
+    while (fichero != NULL) {
+        printf("\n Este fichero ya existe. Deseas continuar y sobrescribirlo?\n"
+               "\t[1] Si\n"
+               "\t[2] No\n");
+        scanf("%i", &seguro);
+        while (seguro == 2) {
+            fclose(fichero);
+            printf("Quieres salir o poner otro nombre?\n"
+                   "\t[1] Salir"
+                   "\t[2] Poner otro nombre");
+            scanf("%i", &option);
+            if (option == 1) {
+                return 0;
+            } else {
+                printf("Dame el nombre del fichero donde lo deseas guardar terminado en .txt:");
+                gets(nombreFichero);
+                fichero = fopen(nombreFichero, "r");
+            }
+        }
+    }
+
+    for (int i = 0; i < max; ++i) {
+        fprintf(fichero, "%s", i + 1, ag[i].nombre, ag[i].apellido, ag[i].telef, ag[i].edad);
+        printf("\n");
+    }
+    fclose(fichero);
+    fichero = fopen(nombreFichero, "r");
+    while (!feof(fichero)) {
+        fgets(linea, MAX, fichero);
+        printf("%s",linea);
+    }
+}
+
+
