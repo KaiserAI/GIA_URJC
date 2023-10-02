@@ -1,1 +1,59 @@
 
+def createRelValPeso(dicc):
+    values = list(dicc.values())
+    pesos = list(dicc.keys())
+    diccRel = {}
+    for i in range(0, len(values)):
+        diccRel[values[i] / pesos[i]] = [values[i], pesos[i]]
+    diccRelSort = dict(sorted(diccRel.items(), reverse=True))
+    return diccRelSort
+
+def entersToDicc(num):
+    dicc = {}
+    for i in range(0, num):
+        a, b = map(int, input().strip().split())
+        dicc[a] = b
+    return dicc
+
+
+def fraccionar(peso, pesoRestante):
+    for num in range(9, 1, -1):
+        if peso * (num/10) <= pesoRestante:
+            return num/10
+    else:
+         return 0
+
+
+def crearSol(dicc, valor, peso):
+    vectorSol = {}
+    pesoRestante = peso
+    valorQueLLevo = 0
+    while valorQueLLevo < valor:
+        for i in dicc:
+            if dicc[i][1] < pesoRestante:
+                pesoRestante -= dicc[i][1]
+                valorQueLLevo += dicc[i][0]
+            else:
+                objectPorcent = fraccionar(dicc[i][1], pesoRestante)
+                pesoRestante -= dicc[i][1] * objectPorcent
+                valorQueLLevo += dicc[i][0] * objectPorcent
+    if pesoRestante > 0
+        return "PUEDE"
+    else:
+        return "TOS"
+
+
+
+numAlm, numPruebas = map(int, input().strip().split())
+diccAlm = entersToDicc(numAlm)
+diccCases = entersToDicc(numPruebas)
+diccRelValPeso = createRelValPeso(diccAlm)
+peso = 0
+casesValues = list(diccCases.values())
+casesPesos = list(diccCases.keys())
+
+for i in range(0, len(casesValues)):
+    print(crearSol(diccRelValPeso, casesValues[i], casesPesos[i]))
+
+
+
