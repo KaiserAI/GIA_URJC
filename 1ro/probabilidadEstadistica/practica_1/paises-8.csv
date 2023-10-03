@@ -1,0 +1,71 @@
+"Pais";"Urbana";"Religion";"Esp.vida.Fem";"Esp.vida.Masc";"Alfabet";"Mort.inf";"PIB.CAP";"Calorias";"Hijpromedio";"Alfabmasc";"Alfabfem"
+"Etiopia";12;"Musulma.";54;51;24;110;122;1667;6.8;32;16
+"Rep. Checa";NA;"Catolica";77;69;NA;9.3;7311;3632;1.8;NA;NA
+"Italia";69;"Catolica";81;74;97;7.6;17500;3504;1.3;98;96
+"Burundi";5;"Catolica";50;46;50;105;208;1932;6.8;61;40
+"Gabon";46;"Catolica";58;52;61;94;4283;2383;4;74;48
+"Suiza";62;"Catolica";82;75;99;6.2;22384;3562;1.6;NA;NA
+"Estados Unido";75;"Protest.";79;73;97;8.1;23474;3671;2.1;97;97
+"Australia";85;"Protest.";80;74;100;7.3;16848;3216;1.9;100;100
+"Hong Kong";94;"Budista";80;75;77;5.8;14641;NA;1.4;90;64
+"Malasia";43;"Musulma.";72;66;78;25.6;2995;2774;3.5;86;70
+"Rumanía";54;"Ortodoxa";75;69;96;20.3;2702;3155;1.8;NA;NA
+"Burkina Faso";15;"Animista";50;47;18;118;357;2288;6.9;28;9
+"Bulgaria";68;"Ortodoxa";75;69;93;12;3831;NA;1.8;NA;NA
+"Suecia";84;"Protest.";81;75;99;5.7;16900;2960;2.1;NA;NA
+"Panama";53;"Catolica";78;71;88;16.5;2397;2539;2.9;88;88
+"Letonia";71;"Protest.";75;64;99;21.5;7400;NA;2;100;100
+"Libia";82;"Musulma.";65;62;64;63;5910;3324;6.4;75;50
+"Mexico";73;"Catolica";77;69;87;35;3604;3052;3.2;90;85
+"Rusia";74;"Ortodoxa";74;64;99;27;6680;NA;1.8;100;100
+"Bosnia";36;"Musulma.";78;72;86;12.7;3098;NA;NA;NA;NA
+"Espa–a";78;"Catolica";81;74;95;6.9;13047;3572;1.4;97;93
+"Bahrein";83;"Musulma.";74;71;77;25;7875;NA;4;55;55
+"Finlandia";60;"Protest.";80;72;100;5.3;15877;3253;1.8;NA;NA
+"Noruega";75;"Protest.";81;74;99;6.3;17755;3326;2;NA;NA
+"Lituania";69;"Catolica";77;68;99;17;6710;NA;2;99;98
+"Libano";84;"Musulma.";71;67;80;39.5;1429;NA;3.4;88;73
+"Estonia";72;"Protest.";76;67;99;19;6000;NA;2;100;100
+"Dinamarca";85;"Protest.";79;73;99;6.6;18277;3628;1.7;NA;NA
+"Costa Rica";47;"Catolica";79;76;93;11;2031;2808;3.1;93;93
+"Bolivia";51;"Catolica";64;59;78;75;730;1916;4.2;85;71
+"Kuwait";96;"Musulma.";78;73;73;12.5;6818;3195;4;77;67
+"Georgia";56;"Ortodoxa";76;69;99;23;4500;NA;2.2;100;100
+"Honduras";44;"Catolica";70;65;73;45;1030;2247;4.9;76;71
+"Somalia";24;"Musulma.";55;54;24;126;2126;1906;7.3;36;14
+"Irlanda";57;"Catolica";78;73;98;7.4;12170;3778;2;NA;NA
+"Kenia";24;"Catolica";55;51;69;74;323;2163;5.9;80;58
+"Canada";77;"Catolica";81;74;97;6.8;19904;3482;1.8;NA;NA
+"Israel";92;"Judía";80;76;92;8.6;13066;NA;2.8;95;89
+"Vietnam";20;"Budista";68;63;88;46;230;2233;3.3;93;83
+"Emiratos arab";81;"Musulma.";74;70;68;22;14193;NA;4.5;70;63
+"Austria";58;"Catolica";79;73;99;6.7;18396;3495;1.5;NA;NA
+"Armenia";68;"Ortodoxa";75;68;98;27;5000;NA;3.2;100;100
+"Brasil";75;"Catolica";67;57;81;66;2354;2751;2.7;82;80
+"Guatemala";39;"Catolica";67;62;55;57;1342;2235;4.8;63;47
+"Islandia";91;"Protest.";81;76;100;4;17241;NA;2.1;NA;NA
+"Uzbekistan";41;"Musulma.";72;65;97;53;1350;NA;3.7;100;100
+"Marruecos";46;"Musulma.";70;66;50;50;1062;NA;3.8;61;38
+"Siria";50;"Musulma.";68;65;64;43;2436;NA;6.7;78;51
+"Argentina";86;"Catolica";75;68;95;25.6;3408;3113;2.8;96;95
+"Corea del Nor";60;"Budista";73;67;99;27.7;1000;NA;2.4;99;99
+"Gran Breta–a";89;"Protest.";80;74;99;7.2;15974;3149;1.8;NA;NA
+"Pakistan";32;"Musulma.";58;57;35;101;406;NA;6.4;47;21
+"Gambia";23;"Musulma.";52;48;27;124;351;NA;6.3;39;16
+"Jordania";68;"Musulma.";74;70;80;34;1157;2634;5.6;89;70
+"Barbados";45;"Protest.";78;73;99;20.3;6950;NA;1.8;99;99
+"Uruguay";89;"Catolica";77;71;96;17;3131;2653;2.4;97;96
+"Croacia";51;"Catolica";77;70;97;8.7;5487;NA;1.7;NA;NA
+"Belgica";96;"Catolica";79;73;99;7.2;17912;NA;1.7;NA;NA
+"Camboya";12;"Budista";52;50;35;112;260;2166;5.8;48;22
+"Filipinas";43;"Catolica";68;63;90;51;867;2375;3.4;90;90
+"Afganistan";18;"Musulma.";44;45;29;168;205;NA;6.9;44;14
+"Uganda";11;"Catolica";43;41;48;112;325;2153;6.8;62;35
+"Arabia Saudí";77;"Musulma.";70;66;62;52;6651;2874;6.7;73;48
+"Ecuador";56;"Catolica";73;67;88;39;1085;2531;3.1;90;86
+"Bangladesh";16;"Musulma.";53;53;35;106;202;2021;4.7;47;22
+"Paises Bajos";89;"Catolica";81;75;99;6.3;17245;3151;1.6;NA;NA
+"Taiwan";71;"Budista";78;72;91;5.1;7055;NA;NA;NA;NA
+"India";26;"Hindú";59;58;52;79;275;2229;4.5;64;39
+"El Salvador";44;"Catolica";69;64;73;41;1078;2317;3.8;76;70
+"Colombia";70;"Catolica";75;69;87;28;1538;2598;2.5;88;86
