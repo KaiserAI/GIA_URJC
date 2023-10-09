@@ -8,7 +8,7 @@ foods.sort(reverse=True)
 sol = False
 idx = 0
 sum = 0
-while not sol:
+while not sol and idx < len(foods):
     if foods[idx][2] > sizeBasket: 
         sum += foods[idx][3] * (sizeBasket / foods[idx][2])
         sol = True
