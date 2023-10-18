@@ -1,37 +1,42 @@
 import math
-from cmath import inf
+import copy
 
 pInf = math.inf
 
+
 def minEdge(lEdges):
-    min = pInf
+    minVal = pInf
+    minEdge = pInf
     for edge in range(len(lEdges)):
-        if lEdges[edge] < min and lEdges[edge] != 0:
-            min = lEdges[edge]
+        if lEdges[edge] < minVal and lEdges[edge] != 0:
+            minVal = lEdges[edge]
             minEdge = edge
-    return (minEdge, min)
+    return (minEdge, minVal)
 
 
 def dijkstra(graf, initial):
-    vistados = []
-    vistados.append(minEdge(graf[initial])[0])
-    lMin = []
-    while len(vistados) < len(graf):
-        for i in vistados:
-            if minEdge(graf[i])[1] not in vistados:
-                lMin.append(minEdge(graf[i]))
-        if min(lMin[0]) not in vistados:
-            vistados.append(min(lMin[0]))
-        lMin = []
+    grafCopy = copy.deepcopy(graf)
+    visted = [initial]
+    lMins = []
+    while len(visted) < len(grafCopy):
+        for i in visted:
+            minEd = minEdge(grafCopy[i])
+            if minEd[0] not in visted and minEd[0] != pInf:
+                lMins.append((minEd, i))
+        lMinsSort = sorted(lMins, key=lambda x: x[0][1])
+        if lMinsSort[0][0][0] not in visted:
+            visted.append(lMinsSort[0][0][0])
+            grafCopy[lMinsSort[0][1]][lMins[0][0][0]] = pInf
+        lMins = []
 
-    return vistados
+    return visted
 
 
 grafo = [
     [0, 5, pInf, 3, pInf],
     [pInf, 0, pInf, pInf, 1],
     [pInf, pInf, 0, pInf, pInf],
-    [pInf, 1, 11, 0, 6],
+    [pInf, 6, 11, 0, 6],
     [pInf, pInf, 1, pInf, 0],
 ]
 print(dijkstra(grafo, 0))
