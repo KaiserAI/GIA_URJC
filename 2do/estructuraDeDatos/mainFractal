@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include "Bitmap.h"
+#include "tCircuitoRCL.h"
+#include "tComplejo.h"
+
+int main()
+{
+    int i, j;
+    int ancho = 640;
+    int alto = 480;
+
+    Bitmap gradiente = createBitmap("gradiente.bmp", ancho, alto, 3);
+    for(i = 0; i < ancho; i++) {
+        for(j = 0; j < alto; j++) {
+            putPixel(&gradiente, i, j, (i / 10) % 64);
+        }
+    }
+    saveBitmap(&gradiente);
+
+
+    Bitmap fractalMandelbrot = createBitmap("fractalMandelbrot.bmp", ancho, alto, 3);
+    tComplejo complejoZ2;
+    tComplejo complejoC;
+    tComplejo * z2;
+    tComplejo * c;
+    z2 = &complejoZ2;
+    c = &complejoC;
+    for(i = 0; i < ancho; i++) { // -2.5 a 1.5
+        for(j = 0; j < alto; j++) { // -1.5 a 1.5
+            double x = (i * 4.0 / ancho) - 2.5;
+            double y = (j * 3.0 / alto) -1.5;
+            crearComplejo(c, x, y);
+            int bool = 0;
+            int idx = 0;
+            while (bool == 0){
+                multiplicar(z2, c, c); //Z^2
+                sumar(z2, c, z2);//Z^2 + c
+                idx++;
+                if (calcularModulo(c) > 2.0){bool = 1;}
+                if(idx == 63){bool = 1;}
+            }
+            putPixel(&fractalMandelbrot, i, j, idx);
+        }
+    }
+    saveBitmap(&fractalMandelbrot);
+}
+
