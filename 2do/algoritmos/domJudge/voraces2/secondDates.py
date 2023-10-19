@@ -7,7 +7,7 @@ def sumAges(list):
     return sumAge
 
 
-def showList(list):                            # Después me enteré de que si pones print(*listYoung) te imprime todos los valores de la lista separados por un espacio.
+def showList(list):                            
     for i in range(len(list)):
         if i == len(list) - 1:
             print(list[i][1], end='\n')
