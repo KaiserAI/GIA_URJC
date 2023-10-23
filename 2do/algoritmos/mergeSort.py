@@ -30,3 +30,42 @@ def mergeSort(vector):
         mergeSort(rightVect)
         vector = merge(vector, leftVect, rightVect)
     return vector
+
+# Implementación de Juanjo aunque no va bien creo.
+from math import inf
+
+
+def merge(v, ini, med, fin):
+    n1 = med - ini + 1
+    n2 = fin - med
+    l = [0] * (n1 + 1)
+    r = [0] * (n2 + 1)
+    for i in range(n1):
+        l[i] = v[ini + i]
+    l[n1] = inf
+    for j in range(n2):
+        r[j] = v[med + 1 + j]
+    r[n2] = inf
+    i = 0
+    j = 0
+    for k in range(ini, fin + 1):
+        if l[i] < r[j]:
+            v[k] = l[i]
+            i += 1
+        else:
+            v[k] = r[j]
+            j += 1
+    return v
+
+
+def mergeSort(v, ini, fin):
+    if ini < fin:
+        med = len(v) // 2
+        v = mergeSort(v, ini, med)
+        v = mergeSort(v, med + 1, fin)
+        v = merge(v, ini, med, fin)
+    return v
+
+
+vector = [1, 8, 3, 7, 9, 7, 2]
+print(mergeSort(vector, 0, len(vector) - 1))
