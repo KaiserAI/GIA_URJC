@@ -7,7 +7,7 @@ def merge(v, lv, rv):
             v[k] = lv[i]
             i += 1
         else:
-            v[k] = lv[j]                # Lo mismo si es más pequeño el de la izquierda.
+            v[k] = rv[j]                # Lo mismo si es más pequeño el de la derecha.
             j += 1
         k += 1
 
